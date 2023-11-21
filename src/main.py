@@ -15,7 +15,11 @@ def cli():
             url (str): The URL of the YouTube video to be downloaded.
         """
 
-        yt = YouTube(url)
+        try:
+            yt = YouTube(url)
+
+        except:
+            exit("\nThe URL you provided is either empty or invalid.")
 
         stream = yt.streams.get_highest_resolution()
         pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True, colour="red")

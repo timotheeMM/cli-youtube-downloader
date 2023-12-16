@@ -7,14 +7,14 @@ __pycache__/
 .venv
 env/
 venv/
+
+# Pip
 Pipfile
 Pipfile.lock
 
 # Download folder
 downloads/
 
-# Json debug folder
+# IDE configuration
 .vscode/
-
-# Configuration
 .idea/

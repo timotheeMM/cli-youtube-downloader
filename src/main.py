@@ -1,6 +1,7 @@
 from pytube import YouTube
 from tqdm import tqdm
 
+
 def cli():
     """
     Command Line Interface for downloading YouTube videos.
@@ -21,8 +22,6 @@ def cli():
         except:
             exit("\nThe URL you provided is either empty or invalid.")
 
-
-
         stream = yt.streams.get_highest_resolution()
         pbar = tqdm(total=stream.filesize, unit="B", unit_scale=True, colour="red")
 
@@ -42,6 +41,7 @@ def cli():
         stream.download("downloads/")
 
         pbar.close()
+
         print(f"Download successfully completed!\nDOWNLOADED: {video_title}\n")
 
     video_url = input("\nEnter the URL of the YouTube video: ")
